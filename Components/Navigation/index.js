@@ -8,7 +8,6 @@ import Login from "../Login";
 
 const OurStack = createStackNavigator(
   {
-    Home: HomePage,
     CoffeeList: CoffeeList,
     CoffeeCart: CoffeeCart,
     CoffeeDetail: CoffeeDetail,
