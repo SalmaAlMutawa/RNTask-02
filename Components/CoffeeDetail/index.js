@@ -43,7 +43,8 @@ class CoffeeDetail extends Component {
   render() {
     const coffeeshops = this.props.coffee.coffeeshops;
     if (!coffeeshops) return <Content />;
-    const coffeeshop = coffeeshops[0];
+    let coffeeshop = this.props.navigation.getParam("coffeeshop", {});
+
     return (
       <Content>
         <List>
