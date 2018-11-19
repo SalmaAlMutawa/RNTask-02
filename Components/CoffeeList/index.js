@@ -23,7 +23,12 @@ class CoffeeList extends Component {
   }
   renderItem(shop) {
     return (
-      <TouchableOpacity key={shop.id} onPress={() => this.handlePress(shop)}>
+      <TouchableOpacity
+        key={shop.id}
+        onPress={() =>
+          this.props.navigation.navigate("CoffeeDetail", { coffeeShop: shop })
+        }
+      >
         <ImageBackground
           source={{ uri: shop.background }}
           style={styles.background}
@@ -38,6 +43,7 @@ class CoffeeList extends Component {
                     source={{ uri: shop.img }}
                     style={styles.thumbnail}
                   />
+
                   <Text style={styles.text}>{shop.name}</Text>
                   <Text note style={styles.text}>
                     {shop.distance}
