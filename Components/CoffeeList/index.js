@@ -11,13 +11,26 @@ import {
   Thumbnail,
   Text,
   Left,
-  Content
+  Content,
+  Icon,
+  Button
 } from "native-base";
 
 // Style
 import styles from "./styles";
 
 class CoffeeList extends Component {
+  static navigationOptions = ({ navigation }) => {
+    return {
+      title: "Coffee List",
+      headerLeft: null,
+      headerRight: (
+        <Button transparent onPress={() => navigation.navigate("CoffeeCart")}>
+          <Icon active name="shopping-cart" type="Entypo" />
+        </Button>
+      )
+    };
+  };
   handlePress() {
     alert("Pressed");
   }
